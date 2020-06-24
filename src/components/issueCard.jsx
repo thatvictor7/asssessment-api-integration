@@ -62,7 +62,7 @@ export default function issueCard(props) {
         <Popup basic hoverable content={`Assigned to ${assignee.login}`} trigger={<a target='_blank' href={assignee.html_url}> <Image
             size='mini'
             src={assignee.avatar_url}
-        />  </a> }  />: null
+        />  </a>} /> : null
 
     return (
         <div className='card-container secondary'>
@@ -72,14 +72,13 @@ export default function issueCard(props) {
 
                 <div className='white-text'>
                     <div className='title'>
-                        <Popup className='primary' hoverable content={popupContent} trigger={<a target='_blank' href={`https://github.com/angular/angular/issues/` + number} className='title-link' type='button'>{title}</a>} />
+                        <Popup className='primary' hoverable content={popupContent} trigger={<a target='_blank' href={`https://github.com/angular/angular/issues/` + number} className='title-link unselectable' type='button'>{title}</a>} />
                     </div>
                     <div>
                         <TagsGenerator tags={tags} />
                     </div>
                     <div>
-                        {/* {createdTime()} */}
-                #{number} opened {createdTime()} by <a className='user-link' target='_blank' href={userUrl}>{user}</a>
+                        #{number} opened {createdTime()} by <a className='user-link' target='_blank' href={userUrl}>{user}</a>
                     </div>
                 </div>
             </div>

@@ -1,7 +1,6 @@
 import React from 'react'
 import IssueCard from './issueCard.jsx'
 import '../styling/issueCardGenerator.css'
-// import { Button, Popup } from 'semantic-ui-react'
 
 export default function IssueGenerator(props) {
     let { issues } = props

@@ -1,9 +1,7 @@
 import React from 'react'
 import Navbar from './components/navbar.jsx'
-import IssueCard from './components/issueCard.jsx'
 import IssueCardGenerator from './components/issueCardGenerator.jsx'
 import './App.css'
-import { render } from '@testing-library/react'
 
 class App extends React.Component {
 
@@ -11,7 +9,6 @@ class App extends React.Component {
     super(props)
     this.state = {
       issues: [],
-      isLoaded: false
     }
   }
 
@@ -20,15 +17,9 @@ class App extends React.Component {
     .then(res => res.json())
     .then(res => {
       this.setState({
-        issues: res,
-        isLoaded: true
+        issues: res
       })
     })
-    // this.logit()
-  }
-
-  logit() {
-    console.log(this.state)
   }
 
   render() {
@@ -36,7 +27,6 @@ class App extends React.Component {
       <div className="App primary">
         <Navbar />
         <IssueCardGenerator {...this.state} />
-        {this.logit()}
       </div>
     )
   }
